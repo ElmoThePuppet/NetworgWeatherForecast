@@ -32,6 +32,8 @@ npm install
 
 ### Setting up environment variables
 
+**_IMPORTANT EDIT_**
+**Due to no access to Power Platform environments, this has not been implemented - therefor this step should be ignored. However I will leave this step here as this is the recommended practice for handling sensitive information. For the purposes of this test application, the API key has been hardcoded.**
 In order for this application to be able to access the WeatherAPI, environment variables need to be set up - in this case the API key and the location that's being queried for the weather forecast. 
 You can do so by renaming the _**.env.example**_ file to **_.env._** Your **_.env_** file should look like this: 
 
@@ -41,6 +43,7 @@ LOCATION=your-default-location
 ```
 
 Replace _your-api-key-here_ and _your-default-location_ with actual values, and save the file.
+
 
 ### Running the application
 
