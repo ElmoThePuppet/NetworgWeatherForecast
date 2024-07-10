@@ -15,11 +15,10 @@ interface ForecastDay {
     weatherDescription: string;
 }
 
-const WeatherForecast: React.FC<WeatherForecastProps> = ({ apikey = '1d7838516180446e8f9130410240807', location = 'London' }) => {
+const WeatherForecast: React.FC<WeatherForecastProps> = ({ apikey, location }) => {
     const [forecast, setForecast] = useState<ForecastDay[]>([]);
     const [error, setError] = useState<string | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
-
     
     const fetchData = () => {
         setLoading(true);
