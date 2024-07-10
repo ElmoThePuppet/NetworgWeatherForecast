@@ -2,6 +2,12 @@ import { IInputs, IOutputs } from "./generated/ManifestTypes";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import WeatherForecast from "../src/WeatherForecast/WeatherForecast";
+import * as dotenv from 'dotenv';
+
+dotenv.config();
+
+const apiKey = process.env.API_KEY || '';
+const location = process.env.LOCATION || '';
 
 export class WeeklyWeatherForecastControl implements ComponentFramework.StandardControl<IInputs, IOutputs> {
     private container!: HTMLDivElement;
@@ -33,8 +39,8 @@ export class WeeklyWeatherForecastControl implements ComponentFramework.Standard
     private render(context: ComponentFramework.Context<IInputs>): void {
         ReactDOM.render(
             React.createElement(WeatherForecast, {
-                apikey: context.parameters.apikey.raw || "",
-                location: context.parameters.location.raw || ""
+                apikey: apiKey,
+                location: location
             }),
             this.container
         );
