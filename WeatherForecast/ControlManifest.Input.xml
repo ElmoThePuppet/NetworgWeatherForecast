@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest>
+  <control namespace="NetworgWeatherForecast"
+           constructor="WeeklyWeatherForecastControl"
+           version="1.0.0"
+           display-name-key="NetworgWeatherForecast.WeeklyWeatherForecast.DisplayName"
+           description-key="NetworgWeatherForecast.WeeklyWeatherForecast.Description"
+           control-type="standard">
+    <property name="apikey"
+              display-name-key="NetworgWeatherForecast.WeeklyWeatherForecast.Property.ApiKey.DisplayName"
+              description-key="NetworgWeatherForecast.WeeklyWeatherForecast.Property.ApiKey.Description"
+              of-type="SingleLine.Text"
+              usage="bound"
+              required="true" />
+    <property name="location"
+              display-name-key="NetworgWeatherForecast.WeeklyWeatherForecast.Property.Location.DisplayName"
+              description-key="NetworgWeatherForecast.WeeklyWeatherForecast.Property.Location.Description"
+              of-type="SingleLine.Text"
+              usage="bound"
+              required="true" />
+    <resources>
+      <code path="index.ts" order="1"/>
+    </resources>
+  </control>
+</manifest>
