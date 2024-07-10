@@ -3,6 +3,9 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import WeatherForecast from "../src/WeatherForecast/WeatherForecast";
 
+const apiKey = '1d7838516180446e8f9130410240807';
+const location = 'London';
+
 export class WeeklyWeatherForecastControl implements ComponentFramework.StandardControl<IInputs, IOutputs> {
     private container!: HTMLDivElement;
 
@@ -14,17 +17,11 @@ export class WeeklyWeatherForecastControl implements ComponentFramework.Standard
         state: ComponentFramework.Dictionary,
         container: HTMLDivElement
     ): void {
-        const apiKey = context.parameters.apikey.raw || process.env.REACT_APP_API_KEY || '';
-        const location = context.parameters.location.raw || process.env.REACT_APP_LOCATION || '';
-
         this.container = container;
         this.render(apiKey, location);
     }
 
     public updateView(context: ComponentFramework.Context<IInputs>): void {
-        const apiKey = context.parameters.apikey.raw || process.env.REACT_APP_API_KEY || '';
-        const location = context.parameters.location.raw || process.env.REACT_APP_LOCATION || '';
-
         this.render(apiKey, location);
     }
 
